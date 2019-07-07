@@ -1,0 +1,14 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: cloudconsumer
+
+eureka:
+  client:
+    service-url:
+        defaultZone: http://eureka7000.com:7000/eureka/
+
+service:
+  prefixUrl: http://cloudproducer/

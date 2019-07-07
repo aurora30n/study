@@ -1,0 +1,19 @@
+server:
+  port: 9901
+
+spring:
+  application:
+    name: feignconsumer
+
+eureka:
+  client:
+    service-url:
+        defaultZone: http://eureka7000.com:7000/eureka/
+
+
+feign:
+  hystrix:
+    enabled: true
+
+service:
+  name: cloudproducer

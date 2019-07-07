@@ -1,0 +1,19 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloudproducer
+
+eureka:
+  client:
+    service-url:
+        defaultZone: http://eureka7000.com:7000/eureka/
+  instance:
+    instance-id: cloudproducer8001
+    prefer-ip-address: true
+
+info:
+  app.name: cloudproducer
+  company.name: www.study.com
+

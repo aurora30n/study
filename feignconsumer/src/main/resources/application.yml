@@ -1,0 +1,3 @@
+spring:
+  profiles:
+    active: feignconsumer9901
