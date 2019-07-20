@@ -4,4 +4,12 @@
   <artifactId>study-parent</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
+
+    <modules>
+        <module>cloudconsumer</module>
+        <module>cloudproducer</module>
+        <module>feignconsumer</module>
+        <module>eurekaserver</module>
+        <module>redis</module>
+    </modules>
 </project>
