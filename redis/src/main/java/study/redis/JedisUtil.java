@@ -26,17 +26,18 @@ public class JedisUtil {
         for (int i=0; i<10; i++) {
             vc = new Vehicle("vehicleId" + i, "vin" + i, "plateNo" + i);
             dev = new Device("deviceId" + i, "deviceName" + i);
-            JedisUtil.getInstance().zadd("mnemonic_vehicle", i,JSON.toJSONString(vc));// 有序集合
-            JedisUtil.getInstance().zadd("mnemonic_device2", i,JSON.toJSONString(dev));// 有序集合
+            JedisUtil.getInstance().zadd("typeahead:vehicle", i,JSON.toJSONString(vc));// 有序集合
+            JedisUtil.getInstance().zadd("typeahead:device", i,JSON.toJSONString(dev));// 有序集合
         }
 
 
         //zrevrange
         System.out.println("---------zrevrange---------");
-        Set<String> rev = JedisUtil.getInstance().zrevrange("vehicle", 0, 2);
+        Set<String> rev = JedisUtil.getInstance().zrevrange("typeahead:vehicle", 0, 2);
         for (String str: rev) {
             System.out.println(str);
         }
+        JedisUtil.getInstance().zrem("typeahead:vehicle", JSON.toJSONString(vc));
 
         //zscan
         System.out.println("---------zscan---------");
