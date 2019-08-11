@@ -11,5 +11,6 @@
         <module>feignconsumer</module>
         <module>eurekaserver</module>
         <module>redis</module>
+        <module>springboot</module>
     </modules>
 </project>

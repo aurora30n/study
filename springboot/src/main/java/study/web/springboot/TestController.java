@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/test")
 public class TestController {
 
     @Autowired
@@ -14,8 +15,13 @@ public class TestController {
     public Object add() {
         TestEntity test = new TestEntity();
         test.setName("test" + (int)(10*Math.random()));
-        testService.add(test);
-        return "success";
+        try {
+            testService.add(test);
+            return "success";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "fail";
+        }
     }
 
 }
