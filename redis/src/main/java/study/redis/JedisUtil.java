@@ -37,6 +37,29 @@ public class JedisUtil {
     }
 
     public static void main(String[] args) {
-        System.out.println(JedisUtil.getInstance().hget("vehicle_base_info", "B21E-00-021"));
+        if (args.length==0 || "--help".equals(args[0])) {
+            System.out.println("Usage: ");
+            System.out.println("Write to Redis: java -jar redis.jar set key field value");
+            System.out.println("Read from Redis : java -jar redis.jar get key field");
+        }
+        if ("set".equals(args[0])) {
+            if (args.length!=4) {
+                System.out.println("param error");
+                return ;
+            }
+
+            JedisUtil.getInstance().hset(args[1], args[2], args[3]);
+            String rev = JedisUtil.getInstance().hget(args[1], args[2]);
+            System.out.println(String.format("write Redis success, key=%s field=%s value=%s",args[1], args[2], rev));
+        } else if ("get".equals(args[0])) {
+            if (args.length!=3) {
+                System.out.println("param error");
+                return ;
+            }
+
+            String rev = JedisUtil.getInstance().hget(args[1], args[2]);
+            System.out.println(String.format("read Redis success, key=%s field=%s value=%s",args[1], args[2], rev));
+
+        }
     }
 }
