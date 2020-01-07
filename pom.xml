@@ -12,5 +12,6 @@
         <module>eurekaserver</module>
         <module>redis</module>
         <module>springboot</module>
+        <module>mybatisplus</module>
     </modules>
 </project>
