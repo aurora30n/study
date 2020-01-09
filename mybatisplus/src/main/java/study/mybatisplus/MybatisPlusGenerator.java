@@ -28,6 +28,7 @@ public class MybatisPlusGenerator {
         gc.setSwagger2(false);
         gc.setBaseResultMap(true);
         gc.setDateType(DateType.ONLY_DATE);
+        gc.setFileOverride(true);
 
         // 自定义文件命名，注意 %s 会自动填充表实体属性！
         gc.setControllerName("%sController");
@@ -81,7 +82,7 @@ public class MybatisPlusGenerator {
         //指定自定义模板路径，注意不要带上.ftl/.vm, 会根据使用的模板引擎自动识别
         // templateConfig.setEntity("templates/entity2.java");
         // templateConfig.setService();
-        // templateConfig.setController();
+         templateConfig.setController(null);
         templateConfig.setXml(null);
         mpg.setTemplate(templateConfig);
 
@@ -95,10 +96,10 @@ public class MybatisPlusGenerator {
         strategy.setEntityLombokModel(true);//默认是false
         strategy.setEntityTableFieldAnnotationEnable(false);
 
-        strategy.setRestControllerStyle(true);
+//        strategy.setRestControllerStyle(true);
 
         //公共父类
-//        strategy.setSuperEntityClass(BaseData.class);
+        strategy.setSuperEntityClass(BaseData.class);
         // 写于父类中的公共字段
         //strategy.setSuperEntityColumns("id");
 

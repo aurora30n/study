@@ -41,6 +41,11 @@ public class TestController {
         list.forEach(item->{
             System.out.println(item.getName());
         });
+
+        // save
+        test = new Test();
+        test.setName("testt0109");
+        testService.save(test);
         return null;
     }
 
