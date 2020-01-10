@@ -30,7 +30,6 @@ public class SwaggerConfig {
         List<Parameter> pars = new ArrayList<Parameter>();
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("全部")
-                .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("study.web.springboot.web"))
                 .paths(PathSelectors.any())

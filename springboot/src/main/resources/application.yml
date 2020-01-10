@@ -37,20 +37,22 @@ spring:
       properties:
         session.timeout.ms: 15000
 
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: none
+  mapper-locations: classpath:mappers/*.xml
 
-# Mybatis config
-mybatis:
-  mapperLocations: classpath:mybatis/*.xml
-  # type-aliases-package: study.web.springboot
 logging:
   config: classpath:logback.xml
 server:
   port: 80
 
 swagger:
-  title: StudySpringBoot
-  description: SpringBoot例子
-  version: 1.0
+  title: App Doc
+  description: App Doc
+  version: 1.0.0
+  enable: true
 
 msg:
   topic: testTopic
