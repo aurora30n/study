@@ -1,6 +1,6 @@
 package study.mybatisplus.service;
 
-import study.mybatisplus.entity.Test;
+import study.mybatisplus.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author Light
  * @since 2020-01-09
  */
-public interface TestService extends IService<Test> {
+public interface UserService extends IService<User> {
 
 }

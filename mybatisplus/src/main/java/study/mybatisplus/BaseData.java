@@ -6,6 +6,5 @@ import lombok.Data;
 
 @Data
 public class BaseData {
-    @TableId(type = IdType.ASSIGN_ID)
     private Long id;
 }

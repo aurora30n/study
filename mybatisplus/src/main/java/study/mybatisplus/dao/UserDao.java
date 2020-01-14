@@ -1,6 +1,6 @@
 package study.mybatisplus.dao;
 
-import study.mybatisplus.entity.Test;
+import study.mybatisplus.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -13,6 +13,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @since 2020-01-09
  */
 @Mapper
-public interface TestDao extends BaseMapper<Test> {
+public interface UserDao extends BaseMapper<User> {
 
 }

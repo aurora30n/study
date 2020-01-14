@@ -1,8 +1,8 @@
 package study.mybatisplus.service.impl;
 
-import study.mybatisplus.entity.Test;
-import study.mybatisplus.dao.TestDao;
-import study.mybatisplus.service.TestService;
+import study.mybatisplus.entity.User;
+import study.mybatisplus.dao.UserDao;
+import study.mybatisplus.service.UserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2020-01-09
  */
 @Service
-public class TestServiceImpl extends ServiceImpl<TestDao, Test> implements TestService {
+public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserService {
 
 }

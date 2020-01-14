@@ -17,12 +17,23 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-public class Test extends BaseData {
+public class User extends BaseData {
 
     private static final long serialVersionUID = 1L;
 
-    private String name;
+    public User() {
+    }
 
+    public User(String account, String name, Integer age) {
+        this.account = account;
+        this.name = name;
+        this.age = age;
+        this.upateTime = new Date();
+    }
+
+    private String account;
+    private String name;
+    private Integer age;
     private Date upateTime;
 
 

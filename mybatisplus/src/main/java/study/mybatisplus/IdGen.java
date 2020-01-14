@@ -1,11 +1,13 @@
 package study.mybatisplus;
 
-public class SnowFlake {
+import java.text.SimpleDateFormat;
+
+public class IdGen {
 
     /**
      * 起始的时间戳
      */
-    private final static long START_STMP = 1480166465631L;
+    private final static long START_STMP = 1577808000001L;
 
     /**
      * 每一部分占用的位数
@@ -33,7 +35,7 @@ public class SnowFlake {
     private long sequence = 0L; //序列号
     private long lastStmp = -1L;//上一次时间戳
 
-    public SnowFlake(long datacenterId, long machineId) {
+    public IdGen(long datacenterId, long machineId) {
         if (datacenterId > MAX_DATACENTER_NUM || datacenterId < 0) {
             throw new IllegalArgumentException("datacenterId can't be greater than MAX_DATACENTER_NUM or less than 0");
         }
@@ -88,7 +90,14 @@ public class SnowFlake {
     }
 
     public static void main(String[] args) {
-        SnowFlake snowFlake = new SnowFlake(1, 1);
+
+        try {
+            System.out.println(new SimpleDateFormat("yyyy-MM-dd HHmmss.SSS").parse("2020-01-01 000000.001").getTime());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        IdGen snowFlake = new IdGen(1, 1);
 
         long start = System.currentTimeMillis();
         for (int i = 0; i < 10; i++) {
