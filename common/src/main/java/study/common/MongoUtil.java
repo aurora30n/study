@@ -1,18 +1,23 @@
-package study;
+package study.common;
 
-import com.mongodb.*;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoCredential;
+import com.mongodb.ServerAddress;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
-import org.bson.BSONObject;
-import org.bson.BasicBSONObject;
+import com.mongodb.client.result.DeleteResult;
+import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
 
 public class MongoUtil {
 
@@ -125,4 +130,76 @@ public class MongoUtil {
         collection.updateOne(query, document);
         System.out.println("文档更新成功");
     }
+
+    /**
+     *
+     * @param c 表名
+     * @param json json格式数据
+     */
+    public static void insert(String c, String json) {
+        if (mongoDatabase == null) {
+            getConnectInfo();
+        }
+        MongoCollection<Document> col = mongoDatabase.getCollection(c);
+        Document doc = Document.parse(json);
+        col.insertOne(doc);
+    }
+
+    /**
+     *
+     * @param c 表名
+     * @param where 查询条件
+     * @param json json格式数据
+     */
+    public static long update(String c, String where, String json) {
+        if (mongoDatabase == null) {
+            getConnectInfo();
+        }
+        MongoCollection<Document> col = mongoDatabase.getCollection(c);
+        Document whereDoc = Document.parse(where);
+        Document doc = new Document("$set", Document.parse(json));
+        UpdateResult rev = col.updateOne(whereDoc, doc);
+        return rev.getModifiedCount();
+    }
+
+    /**
+     *
+     * @param c 表名
+     * @param where json格式数据
+     * @return
+     */
+    public static List<Map<String, Object>> queryList(String c, String where) {
+        if (mongoDatabase == null) {
+            getConnectInfo();
+        }
+        MongoCollection<Document> col = mongoDatabase.getCollection(c);
+        Document whereDoc = Document.parse(where);
+        FindIterable<Document> it = col.find(whereDoc);
+        MongoCursor<Document> cursor = it.iterator();
+        List<Map<String, Object>> list = new ArrayList<>();
+        while (cursor.hasNext()) {
+            Document doc = cursor.next();
+            String data = doc.toJson();
+            Map<String, Object> dataMap = JsonUtil.toCollect(data);
+            list.add(dataMap);
+        }
+        return list;
+    }
+
+    /**
+     *
+     * @param c 表名
+     * @param where json格式数据
+     * @return
+     */
+    public static long delete(String c, String where) {
+        if (mongoDatabase == null) {
+            getConnectInfo();
+        }
+        MongoCollection<Document> col = mongoDatabase.getCollection(c);
+        Document whereDoc = Document.parse(where);
+        DeleteResult rev = col.deleteMany(whereDoc);
+        return rev.getDeletedCount();
+    }
+
 }
