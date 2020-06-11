@@ -13,6 +13,6 @@
         <module>redis</module>
         <module>springboot</module>
         <module>mybatisplus</module>
-        <module>common</module>
+        <module>mongo</module>
     </modules>
 </project>
