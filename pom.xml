@@ -14,5 +14,7 @@
         <module>springboot</module>
         <module>mybatisplus</module>
         <module>mongo</module>
+        <module>zk</module>
+        <module>alg</module>
     </modules>
 </project>
