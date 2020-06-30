@@ -3,15 +3,18 @@ package study.alg;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
-
 @SpringBootTest
 class AlgApplicationTests {
 
+    /**
+     * 有效的括号字符串
+     */
     @Test
-    void contextLoads() {
+    void test() {
+        String str = "(*))";
+        for (int i=0; i<str.length(); i++) {
 
+        }
     }
 
 }
