@@ -1,7 +1,7 @@
-package study.web.springboot.dao;
+package study.vuesrv.dao;
 
 import org.apache.ibatis.annotations.Mapper;
-import study.web.springboot.entity.User;
+import study.vuesrv.entity.User;
 
 @Mapper // MyBatis 与@MapperScan配置一个就行
 public interface UserDao {

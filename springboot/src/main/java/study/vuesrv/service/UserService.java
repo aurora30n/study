@@ -1,10 +1,9 @@
-package study.web.springboot.service;
+package study.vuesrv.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import study.web.springboot.entity.User;
-import study.web.springboot.dao.UserDao;
+import study.vuesrv.dao.UserDao;
+import study.vuesrv.entity.User;
 
 import javax.annotation.Resource;
 

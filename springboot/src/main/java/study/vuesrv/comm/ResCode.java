@@ -1,4 +1,4 @@
-package study.web.springboot.comm;
+package study.vuesrv.comm;
 
 public enum ResCode {
     success(200, "成功"),

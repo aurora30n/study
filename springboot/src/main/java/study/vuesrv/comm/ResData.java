@@ -1,4 +1,4 @@
-package study.web.springboot.comm;
+package study.vuesrv.comm;
 
 public class ResData<T> {
     private Integer code;

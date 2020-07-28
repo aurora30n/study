@@ -1,0 +1,19 @@
+
+spring:
+  application:
+    name: vuesrv
+
+logging:
+  config: classpath:logback-spring.xml
+server:
+  port: 8000
+
+swagger:
+  title: App Doc
+  description: App Doc
+  version: 1.0.0
+  enable: true
+
+msg:
+  topic: testTopic
+  groupId: testGroup

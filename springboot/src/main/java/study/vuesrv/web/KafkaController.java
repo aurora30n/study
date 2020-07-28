@@ -1,4 +1,4 @@
-package study.web.springboot.web;
+package study.vuesrv.web;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import study.web.springboot.comm.ResData;
-import study.web.springboot.service.KafkaService;
+import study.vuesrv.comm.ResData;
+import study.vuesrv.service.KafkaService;
 
 @Api(tags = "Kafka")
 @RestController

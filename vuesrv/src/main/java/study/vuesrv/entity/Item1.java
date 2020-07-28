@@ -1,16 +1,16 @@
-package study.web.springboot.entity;
+package study.vuesrv.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class Item1 {
 
     private int id;
     private String name;
+    private String photoUrl;
 
 }

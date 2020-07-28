@@ -1,4 +1,4 @@
-package study.web.springboot.comm;
+package study.vuesrv.comm;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;

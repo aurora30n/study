@@ -1,12 +1,12 @@
-package study.web.springboot.web;
+package study.vuesrv.web;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import study.web.springboot.entity.User;
-import study.web.springboot.service.UserService;
+import study.vuesrv.entity.User;
+import study.vuesrv.service.UserService;
 
 @Api(tags = "Test")
 @RestController
