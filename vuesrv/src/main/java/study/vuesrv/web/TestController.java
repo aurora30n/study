@@ -13,6 +13,7 @@ import study.vuesrv.comm.ResData;
 import study.vuesrv.entity.Item1;
 import study.vuesrv.entity.Item2;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -40,6 +41,9 @@ public class TestController {
                         test.setId(i);
                         test.setName("Item1-" + i);
                         test.setPhotoUrl("img/" + Item1.class.getSimpleName()+".png");
+                        test.setDes("This is des");
+                        test.setCont("This is content");
+                        test.setUpdateTime(new Date());
                         list.add(test);
                     }
                     break;
