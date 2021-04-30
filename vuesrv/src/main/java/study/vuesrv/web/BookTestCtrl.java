@@ -70,7 +70,7 @@ public class BookTestCtrl {
         try {
 
             List list = Lists.newArrayList();
-            for (long i = page.getPageIndex()*page.getPageSize(); i <= page.getPageIndex()*page.getPageSize()+page.getPageSize(); i++) {
+            for (long i = page.getPageIndex()*page.getPageSize(); i < page.getPageIndex()*page.getPageSize()+page.getPageSize(); i++) {
                 BookDTO obj = new BookDTO();
                 obj.setId(i);
                 obj.setName("book" + i);

@@ -1,4 +1,4 @@
-package study.zk;
+package study.hbase;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
